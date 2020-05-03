@@ -379,6 +379,12 @@ public class WebRTCModule extends ReactContextBaseJavaModule {
             conf.presumeWritableWhenFullyRelayed = v;
         }
 
+        if (map.hasKey("networkToken")
+                && map.getType("networkToken") == ReadableType.String) {
+          final String s = map.getString("networkToken");
+          conf.networkToken = s;
+        }
+
         return conf;
     }
 
